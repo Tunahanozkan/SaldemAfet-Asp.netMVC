@@ -1,0 +1,39 @@
+﻿@using SaldemAfet.Models.Sınıflar
+@model List<AfetBilgisi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_YöneticiLayout.cshtml";
+}
+
+<h2>Afet Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>AfetTürü</td>
+        <td>Afetİl</td>
+        <td>Afetİlçe</td>
+        <td>AfetNeden</td>
+        <td>EtkilenenAlan</td>
+        <td>BaslangıçTarih</td>
+        <td>BitişTarih</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+    </tr>
+    @foreach(var x in Model)
+    { 
+    <tr>
+        <td>@x.afetId</td>
+        <td>@x.afetTürü</td>
+        <td>@x.afetIl</td>
+        <td>@x.afetIlce</td>
+        <td>@x.afetNeden</td>
+        <td>@x.etkilendigiAlan</td>
+        <td>@x.afetbasTarih</td>
+        <td>@x.afetbitTarih</td>
+        <td><a href="/Yönetici/KayıtSil/@x.afetId" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Yönetici/KayıtGetir/@x.afetId" class="btn btn-warning">Güncelle</a></td>
+    </tr>
+    }
+</table>
+<a href="/Yönetici/YeniKayıt/" class="btn btn-primary">Yeni Kayıt Ekle</a>

@@ -1,0 +1,33 @@
+﻿@model SaldemAfet.Models.Sınıflar.AfetBilgisi
+@{
+    ViewBag.Title = "YeniKayıt";
+    Layout = "~/Views/Shared/_YöneticiLayout.cshtml";
+}
+
+<h2>Yeni Kayıt Ekleme</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.afetTürü)
+    @Html.TextBoxFor(x => x.afetTürü, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetIl)
+    @Html.TextBoxFor(x => x.afetIl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetIlce)
+    @Html.TextBoxFor(x => x.afetIlce, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetNeden)
+    @Html.TextAreaFor(x => x.afetNeden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.etkilendigiAlan)
+    @Html.TextBoxFor(x => x.etkilendigiAlan, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetbasTarih)
+    @Html.TextBoxFor(x => x.afetbasTarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetbitTarih)
+    @Html.TextBoxFor(x => x.afetbitTarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kayıt Ekle</button>
+</form>
+

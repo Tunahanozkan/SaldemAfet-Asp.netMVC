@@ -1,0 +1,37 @@
+﻿@model SaldemAfet.Models.Sınıflar.AfetBilgisi
+@{
+    ViewBag.Title = "KayıtGetir";
+    Layout = "~/Views/Shared/_YöneticiLayout.cshtml";
+}
+
+<h2>Kayıt Güncelleme</h2>
+<br />
+@using (Html.BeginForm("KayıtGüncelle", "Yönetici", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.afetId)
+    @Html.TextBoxFor(x => x.afetId, new { @class = "form-control",@readonly="readonly" })
+    <br />
+    @Html.LabelFor(x => x.afetTürü)
+    @Html.TextBoxFor(x => x.afetTürü, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetIl)
+    @Html.TextBoxFor(x => x.afetIl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetIlce)
+    @Html.TextBoxFor(x => x.afetIlce, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetNeden)
+    @Html.TextAreaFor(x => x.afetNeden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.etkilendigiAlan)
+    @Html.TextBoxFor(x => x.etkilendigiAlan, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetbasTarih)
+    @Html.TextBoxFor(x => x.afetbasTarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.afetbitTarih)
+    @Html.TextBoxFor(x => x.afetbitTarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kayıt Güncelle</button>
+}
+
